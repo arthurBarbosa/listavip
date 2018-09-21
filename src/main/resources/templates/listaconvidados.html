@@ -17,14 +17,16 @@
 					</tr>
 				</thead>
 				<tr th:each="convidado : ${convidados}">
-					<td>${convidado.nome}</td>
-					<td>${convidado.email}</td>
-					<td>${convidado.telefone}</td>
+					<td><span th:text="${convidado.nome}"></span></td>
+					<td><span th:text="${convidado.email}"></span></td>
+					<td><span th:text="${convidado.telefone}"></span></td>
 				</tr>
 			</table>
 		</div>
-		<hr>
-		<form action="convidado">
+		
+		<hr/>
+		
+		<form action="save" method="POST" >
 			<div class="form-group">
 				<label for="nome">Nome</label> <input type="text"
 					class="form-control" id="nome" name="nome" placeholder="Nome">
@@ -38,11 +40,10 @@
 					class="form-control" id="telefone" name="telefone"
 					placeholder="Telefone">
 			</div>
-			<button type="submit" class="btn btn-success">Convidar</button>
+			<button type="submit" class="btn btn-success" >Convidar</button>
 		</form>
 	</div>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
